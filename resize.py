@@ -6,6 +6,7 @@ img = cv.imread('Photos/img2.jpg')
 
 
 def rescaleFrame(frame, scale=0.2):
+    # Work for image, video, live video
     width = int(frame.shape[1] * scale)
     height = int(frame.shape[0] * scale)
     dimensions = (width, height)
@@ -16,7 +17,13 @@ img_resized = rescaleFrame(img)
 cv.imshow('Dubai', img_resized)
 cv.waitKey(0)
 
-# capture = cv.VideoCapture('Videos/google.mp4')
+capture = cv.VideoCapture('Videos/google.mp4')
+
+
+def changeRes(width, height):
+    # Live video
+    capture.set(3, width)
+    capture.set(4, height)
 
 # while True:
 #     isTrue, frame = capture.read()
