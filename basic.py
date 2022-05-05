@@ -31,6 +31,18 @@ canny = cv.Canny(img, 125, 175)
 
 # 4. Dilating the image
 dilated = cv.dilate(canny, (3, 3), iterations=1)
-cv.imshow('Dilated', dilated)
+# cv.imshow('Dilated', dilated)
+
+# 5. Eroding
+eroded = cv.erode(dilated, (3, 3), iterations=1)
+# cv.imshow('Eroed', eroded)
+
+# 6. Resize
+resized = cv.resize(img, (500, 200), interpolation=cv.INTER_AREA)
+# cv.imshow('Resized', resized)
+
+# 7. Cropping
+cropped = img[50:100, 20:400]
+cv.imshow('Cropped', cropped)
 
 cv.waitKey(0)
