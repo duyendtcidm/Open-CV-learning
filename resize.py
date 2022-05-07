@@ -1,3 +1,4 @@
+from turtle import width
 import cv2 as cv
 from cv2 import INTER_AREA
 
@@ -5,7 +6,7 @@ img = cv.imread('Photos/img2.jpg')
 # cv.imshow('Dubai', img)
 
 
-def rescaleFrame(frame, scale=0.2):
+def rescaleFrame(frame, scale):
     # Work for image, video, live video
     width = int(frame.shape[1] * scale)
     height = int(frame.shape[0] * scale)
@@ -13,7 +14,7 @@ def rescaleFrame(frame, scale=0.2):
     return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
 
 
-img_resized = rescaleFrame(img)
+img_resized = rescaleFrame(img, 0.2)
 cv.imshow('Dubai', img_resized)
 cv.waitKey(0)
 
