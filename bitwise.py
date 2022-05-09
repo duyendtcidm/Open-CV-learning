@@ -29,7 +29,7 @@ cv.imshow('Bitwise NOT', bitwise_not)
 
 # Bitwise XOR
 
-bitwise_xor = cv.bitwise_xor(restangle, circle)
+bitwise_xor = cv.bitwise_xor(rectangle, circle)
 cv.imshow('Bitwise XOR', bitwise_xor)
 
 
